@@ -7,7 +7,7 @@ Template.meteorErrors.helpers({
 Template.meteorError.rendered = function() {
   var error = this.data;
   Meteor.defer(function() {
-    Meteor.errors.update(error._id, {@set: {seen: true}});
+    Meteor.errors.update(error._id, {$set: {seen: true}});
   });
 };
 
