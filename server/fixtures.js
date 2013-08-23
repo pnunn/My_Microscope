@@ -18,7 +18,8 @@ if(Posts.find().count() === 0){
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 2,
+    upvoters: [], votes: 0
   });
 
   Comments.insert({
@@ -44,7 +45,8 @@ if(Posts.find().count() === 0){
     author: tom.profile.name,
     url: 'http://meteor.com',
     submitted: now - 10 * 3600 * 1000,
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [], votes: 0
   });
 
   Posts.insert({
@@ -53,7 +55,8 @@ if(Posts.find().count() === 0){
     author: tom.profile.name,
     url: 'http://themeteorbook.com',
     submitted: now - 12 * 3600 * 1000,
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [], votes: 0
   });
 
   for(var i=0; i<10; i++) {
@@ -61,9 +64,10 @@ if(Posts.find().count() === 0){
       title: 'Test post #' + i,
       author: sacha.profile.name,
       userId: sacha._id,
-      url: 'http://google.com/?q=test-' +i,
-      submitted: now -i * 3600 *  1000,
-      commetnsCount: 0
+      url: 'http://google.com/?q=test-' + i,
+      submitted: now -i * 3600 *  1000 + 1,
+      commentsCount: 0,
+      upvoters: [], votes: 0
     });
   }
 }

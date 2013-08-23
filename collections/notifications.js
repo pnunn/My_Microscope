@@ -15,5 +15,5 @@ createCommentNotification = function(comment){
       read: false
     });
   }
-}
+};
 
